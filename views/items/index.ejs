@@ -1,0 +1,19 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="allItems">
+<% for(let item of food) { %>
+<div class="card" onclick="window.location.href='http://localhost:8080/food/<%=item.id%>'" style="width: 18rem; height: 28rem;">
+    <img src="<%= item.image%>" class="card-img-top foodImg" alt="<%= item.name %>Image">
+    <div class="card-body">
+      <h5 class="card-title"><%= item.name %></h5>
+      <p class="card-text"><%= item.description %></p>
+      <br>
+      <div class="cardBtn">
+        <a href="http://localhost:8080/food/<%=item.id%>/edit" class="btn btn-dark edit">Edit</a>
+        <form method="POST" action="/food/<%= item.id %>?_method=DELETE">
+          <button type="submit" class="btn btn-dark delete">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<% } %>
+</div>

@@ -1,0 +1,15 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="showItem">
+    <div class="card" style="width: 25rem; height: 25rem; padding-top: 10px;margin-top: 3rem;">
+        <img src="<%= item.image%>" class="card-img-top foodImg" style="width: 24rem; height: 14rem; margin: 15px;"alt="<%= item.name %>Image">
+        <div class="card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text"><%= item.description %></p>
+            <br>
+            <!-- <div class="cardBtn">
+                <a href="#" class="btn btn-dark edit">Edit</a>
+                <a href="#" class="btn btn-dark delete">Delete</a>
+            </div> -->
+        </div>
+    </div>
+</div>

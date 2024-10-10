@@ -1,0 +1,18 @@
+<% layout('/layouts/boilerplate') -%>
+<h2>Edit Your Food Item</h2>
+    <form method="POST" action="/food/<%=item.id%>?_method=PATCH">
+        <div class="mb-3">
+            <lable for="name"class="form-label">Name</lable>
+            <input name="food[name]" value="<%=item.name%>" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <lable for="description"class="form-label">Description</lable>
+            <textarea name="food[description]" value="<%=item.description%>" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <lable for="image"class="form-label">Original Image</lable>
+            <img style="height: 250px; width: 250px;" src="<%=item.image%>">
+            <input name="food[image]" type="url" class="form-control">
+        </div>
+        <button class="btn btn-dark add-btn mt-3 mb-3">Submit</button>
+    </form>
